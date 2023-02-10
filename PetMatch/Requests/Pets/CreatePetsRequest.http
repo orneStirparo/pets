@@ -1,0 +1,11 @@
+@host=http://localhost:4000
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJQZXRNYXRjaC5Eb21haW4uVXNlcnMuVmFsdWVPYmplY3RzLlVzZXJJZCIsImdpdmVuX25hbWUiOiJPcm5lbGxhIiwiZmFtaWx5X25hbWUiOiJTdGlycGFybyIsImp0aSI6IjVhYmEyMDM4LWMxNTMtNDdjNC1hNjU3LTY3ZGFlZjg4ZWNkMiIsImV4cCI6MTY3NTk5NjEzOCwiaXNzIjoiUGV0TWF0Y2giLCJhdWQiOiJQZXRNYXRjaCJ9.5vyVb_yJlXwLHRRc8YeSLaezsDcTXzrbtOoSR8jiPTs
+POST {{host}}/pets
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "Buddy",
+    "description": "A good dog",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/My_dog.jpg"
+}
