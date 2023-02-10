@@ -35,6 +35,7 @@ public class PetsController : ApiController
             pet => Ok(_mapper.Map<PetResponse>(pet)),
             errors => Problem(errors));
     }
+    
     [HttpGet]
     public IActionResult GetAll()
     {
@@ -42,12 +43,12 @@ public class PetsController : ApiController
         return Ok(pets);
     }
 
-    // [HttpGet("{id}")]
-    // public IActionResult GetById(int id)
-    // {
-    //     var user = _petRepository.GetById(id);
-    //     return Ok(user);
-    // }
+    [HttpGet("{id}")]
+    public IActionResult GetById(Guid id)
+    {
+        var user = _petRepository.GetById(id);
+        return Ok(user);
+    }
 
     // [HttpPost]
     // public IActionResult Create(CreateRequest model)

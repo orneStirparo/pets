@@ -36,6 +36,6 @@ public sealed class Pet : AggregateRoot<PetId>
     }
 
 #pragma warning disable CS8618
-    private Pet() { }
+    public Pet() { }
 #pragma warning restore CS8618
 }
