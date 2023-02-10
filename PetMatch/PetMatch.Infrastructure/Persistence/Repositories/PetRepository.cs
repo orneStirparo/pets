@@ -33,6 +33,13 @@ public sealed class PetRepository : IPetRepository
         _dbContext.Update(reqPet);
         _dbContext.SaveChanges();
     }
+
+    public void Delete(Guid id)
+    {
+        var pet = getPet(id);
+        _dbContext.Remove(pet);
+        _dbContext.SaveChanges();
+    }
      private Pet getPet(Guid id)
     {
         Pet finalPet = new Pet();

@@ -8,4 +8,5 @@ public interface IPetRepository
     IEnumerable<Pet> GetAll();
     Pet GetById(Guid id);
     void Update(Pet pet);
+    void Delete(Guid id);
 }

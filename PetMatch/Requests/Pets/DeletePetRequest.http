@@ -1,11 +1,6 @@
 @host=http://localhost:4000
+@id=5254adc9-39ad-41a9-ae2b-69fa21c9fcee
 @token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJQZXRNYXRjaC5Eb21haW4uVXNlcnMuVmFsdWVPYmplY3RzLlVzZXJJZCIsImdpdmVuX25hbWUiOiJPcm5lbGxhIiwiZmFtaWx5X25hbWUiOiJTdGlycGFybyIsImp0aSI6ImUzOTUyMTFkLTA1MTEtNDc4Zi1iNzg0LWRmNzA5OWFkZjljOCIsImV4cCI6MTY3NjA0ODQ3MSwiaXNzIjoiUGV0TWF0Y2giLCJhdWQiOiJQZXRNYXRjaCJ9.2ekA2cgIjrgyLr99-fH69LbxjUrDlwzCP1aQFc9z19o
-POST {{host}}/pets
+DELETE {{host}}/pets/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{token}}
-
-{
-    "name": "Buddy",
-    "description": "A good dog",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/My_dog.jpg"
-}

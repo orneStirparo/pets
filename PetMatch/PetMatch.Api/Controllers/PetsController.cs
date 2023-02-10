@@ -56,14 +56,13 @@ public class PetsController : ApiController
         var previousPet = _petRepository.GetById(id);
         var mappedPet = _mapper.Map(pet, previousPet);
         _petRepository.Update(mappedPet);
-        return Ok(new { message = "User updated" });
+        return Ok(new { message = "Pet updated" });
     }
 
-
-    // [HttpDelete("{id}")]
-    // public IActionResult Delete(int id)
-    // {
-    //     _petRepository.Delete(id);
-    //     return Ok(new { message = "Pet deleted" });
-    // }
+    [HttpDelete("{id}")]
+    public IActionResult Delete(Guid id)
+    {
+        _petRepository.Delete(id);
+        return Ok(new { message = "Pet deleted" });
+    }
     }
