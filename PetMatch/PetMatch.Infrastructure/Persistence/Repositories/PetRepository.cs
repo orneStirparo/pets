@@ -11,6 +11,10 @@ public sealed class PetRepository : IPetRepository
     {
         _dbContext = dbContext;
     }
+    public IEnumerable<Pet> GetAll()
+    {
+        return _dbContext.Pet;
+    }
 
     public void Add(Pet pet)
     {

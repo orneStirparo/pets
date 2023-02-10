@@ -35,12 +35,12 @@ public class PetsController : ApiController
             pet => Ok(_mapper.Map<PetResponse>(pet)),
             errors => Problem(errors));
     }
-    // [HttpGet]
-    // public IActionResult GetAll()
-    // {
-    //     var users = _petRepository.GetAll();
-    //     return Ok(users);
-    // }
+    [HttpGet]
+    public IActionResult GetAll()
+    {
+        var pets = _petRepository.GetAll();
+        return Ok(pets);
+    }
 
     // [HttpGet("{id}")]
     // public IActionResult GetById(int id)

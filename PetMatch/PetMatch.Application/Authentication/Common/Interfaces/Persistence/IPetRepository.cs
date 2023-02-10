@@ -5,4 +5,5 @@ namespace PetMatch.Application.Common.Interfaces.Persistance;
 public interface IPetRepository
 {
     void Add(Pet pet);
+    IEnumerable<Pet> GetAll();
 }
