@@ -7,4 +7,5 @@ public interface IPetRepository
     void Add(Pet pet);
     IEnumerable<Pet> GetAll();
     Pet GetById(Guid id);
+    void Update(Pet pet);
 }

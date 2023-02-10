@@ -1,11 +1,12 @@
 @host=http://localhost:4000
+@id=c344a36a-77fa-4291-b282-71b6c6561d19
 @token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJQZXRNYXRjaC5Eb21haW4uVXNlcnMuVmFsdWVPYmplY3RzLlVzZXJJZCIsImdpdmVuX25hbWUiOiJPcm5lbGxhIiwiZmFtaWx5X25hbWUiOiJTdGlycGFybyIsImp0aSI6ImYwYjNmNzdlLTU1ZjgtNDg3My04NmUzLTIwZTQ3MDdlM2QyNCIsImV4cCI6MTY3NjA0NzE4MCwiaXNzIjoiUGV0TWF0Y2giLCJhdWQiOiJQZXRNYXRjaCJ9.WR6N4me41pQQr2Bf8GxJgNSAJLx3OzJPwX02aMmbO0A
-POST {{host}}/pets
+PUT {{host}}/pets/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-    "name": "Buddy",
-    "description": "A good dog",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/My_dog.jpg"
+    "name": "Rufus",
+    "description": "A very good dog",
+    "url": "https://www.aspca.org/sites/default/files/blog_make-dogs-day_101619_main.jpg"
 }

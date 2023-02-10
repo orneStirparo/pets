@@ -50,19 +50,15 @@ public class PetsController : ApiController
         return Ok(user);
     }
 
-    // [HttpPost]
-    // public IActionResult Create(CreateRequest model)
-    // {
-    //     _petRepository.Create(model);
-    //     return Ok(new { message = "Pet created" });
-    // }
+     [HttpPut("{id}")]
+    public IActionResult Update(Guid id, UpdatePetRequest pet)
+    {
+        var previousPet = _petRepository.GetById(id);
+        var mappedPet = _mapper.Map(pet, previousPet);
+        _petRepository.Update(mappedPet);
+        return Ok(new { message = "User updated" });
+    }
 
-    // [HttpPut("{id}")]
-    // public IActionResult Update(int id, UpdateRequest model)
-    // {
-    //     _petRepository.Update(id, model);
-    //     return Ok(new { message = "Pet updated" });
-    // }
 
     // [HttpDelete("{id}")]
     // public IActionResult Delete(int id)

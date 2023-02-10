@@ -1,5 +1,6 @@
 using PetMatch.Application.Common.Interfaces.Persistance;
 using PetMatch.Domain.Pets;
+using PetMatch.Domain.Pets.ValueObjects;
 
 namespace PetMatch.Infrastructure.Persistence.Repositories;
 
@@ -25,6 +26,12 @@ public sealed class PetRepository : IPetRepository
      public Pet GetById(Guid id)
     {
         return getPet(id);
+    }
+
+    public void Update(Pet reqPet)
+    {
+        _dbContext.Update(reqPet);
+        _dbContext.SaveChanges();
     }
      private Pet getPet(Guid id)
     {
