@@ -1,0 +1,35 @@
+<div class="content" class="custom-background">
+  <button class="custom" (click)="createPet()">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24
+  v24H0z"></path>
+  <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> Create a Pet!
+    </span>
+  </button>
+  <button class="button-style" (click)="signOut()">
+    Sign out
+    <div class="arrow-wrapper">
+        <div class="arrow"></div>
+    </div>
+</button>
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let num of [1,2,3,4,5,6,7]">
+      <mat-card class="mat-elevation-z4" >
+        <mat-card-header>
+          <mat-card-title>Pet {{num}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image (click)="getDetails()" class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/1/18/Dog_Breeds.jpg">
+        <mat-card-content>
+          <p>
+            This is pet {{num}}.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="getDetails()">DETAILS</button>
+          <button mat-button (click)="updatePet()">EDIT</button>
+          <button mat-button (click)="deletePet()">DELETE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  </div>
