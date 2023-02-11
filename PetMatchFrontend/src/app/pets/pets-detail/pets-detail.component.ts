@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pets-detail',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./pets-detail.component.css']
 })
 export class PetsDetailComponent {
-  constructor(){}
+  constructor(private router: Router){}
+  signOut(): void{
+    localStorage.removeItem('token')
+    window.location.replace("/login");
+  };
+  goBack(): void{
+    this.router.navigate(['/pets']);
+  }
+  updatePet(){}
+  deletePet(){}
 }

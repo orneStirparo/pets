@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-pets-form",
@@ -13,7 +13,7 @@ export class PetFormComponent {
     name!: string;
     description!: string;
     url!: string;
-    constructor(private route: ActivatedRoute){}
+    constructor(private route: ActivatedRoute, private router: Router){}
 
     ngOnInit(){
       this.id = this.route.snapshot.params['id'];
@@ -22,5 +22,8 @@ export class PetFormComponent {
     }
     onClick(){
         console.log("clicked")
+    }
+    goBack(): void{
+      this.router.navigate(['/pets']);
     }
 }

@@ -10,8 +10,8 @@
     padding: 0;
   }
   .custom-form {
-    min-width: 300px;
-    max-width: 60%;
+    width: 600px;
+    height: 400px;
     margin: 0px auto;
     background: rgba(255, 255, 255, 0.15);
     padding: 2rem 3rem;
@@ -20,7 +20,7 @@
     background-color: #ecf0f3;
     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
     color: black;
-    margin-top: 10rem;
+    margin-top: 5rem;
   }
   .custom-form input {
     display: block;
@@ -34,15 +34,38 @@
     border: 0 none;
     background: #ebf5fc;
   }
-  .custom-form button {
+  .card-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+  .confirm {
     text-transform: uppercase;
     letter-spacing: 0.15em;
     border: none;
     font-size: 0.875rem;
     color: #ffffff;
     font-weight: bold;
-    background-color: #bcd8c1;
-    width: 100%;
+    background-color: #b3d8b9;
+    width: 45%;
+    display: block;
+    padding: 0.875rem 1rem;
+    border-radius: 1.5rem;
+    margin-right: 20px;
+    margin-left: 0px;
+    box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+    cursor: pointer;
+  }
+  .cancel {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    font-size: 0.875rem;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #ed8a83;
+    width: 45%;
     display: block;
     padding: 0.875rem 1rem;
     border-radius: 1.5rem;
@@ -61,3 +84,53 @@
     border: 0 none;
     background: #ebf5fc;
   }
+  .text-title {
+    text-transform: uppercase;
+    border: none;
+    font-weight: 900;
+    font-size: 2em;
+    line-height: 1.5;
+  }
+
+   .button-style .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button-style .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  .button-style .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+  }
+  
+  .button-style:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+  }
+  
+  .button-style:hover .arrow {
+    background: var(--secondary-color);
+  }
+  
+  .button-style:hover .arrow:before {
+    right: 0;
+  }
+  

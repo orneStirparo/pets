@@ -25,6 +25,7 @@
  
  .custom:hover {
   background-color: #3890e8;
+  cursor: pointer;
  }
  .custom-background {
   background-color: #ecf0f3;
@@ -80,6 +81,7 @@
 
 .button-style:hover {
   background-color: var(--hover-color);
+  cursor: pointer;
 }
 
 .button-style:hover .arrow {
@@ -90,7 +92,6 @@
   right: 0;
 }
 
- /*Hover*/
  .card-img:hover {
   transform: translateY(-25%);
   box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;

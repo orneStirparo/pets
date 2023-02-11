@@ -1,6 +1,7 @@
-
 <div class="form">
     <form class="custom-form" method="post">
+      <h1 *ngIf="isAddMode" class="text-title">Create Pet</h1>
+      <h1 *ngIf="!isAddMode" class="text-title">Edit Pet</h1>
       <input
         type="name"
         name="name"
@@ -10,16 +11,19 @@
       <input
         type="description"
         name="description"
-        placeholder="Descripcion"
+        placeholder="Description"
         required="required"
       />
       
       <input
         type="url"
         name="url"
-        placeholder="Inserte URL de la imagen"
+        placeholder="Insert the URL of the image"
         required="required"
       />
-      <button type="submit" (click)="onClick()">Confirmar</button>
+      <div class="card-footer">
+        <button type="submit" class="confirm" (click)="onClick()">Submit</button>
+      <button type="submit" class="cancel" (click)="goBack()">Cancel</button>
+      </div>
     </form>
   </div>
