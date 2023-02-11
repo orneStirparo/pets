@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { first } from 'rxjs';
+import { Pet } from 'src/app/models';
+import { PetService } from 'src/app/services';
 
 @Component({
   selector: 'app-pets-list',
@@ -7,10 +10,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./pet-list.component.css']
 })
 export class PetListComponent {
-  constructor(private router: Router){}
+  pets!: any;
+  constructor(private router: Router, private petService: PetService){}
+  ngOnInit(){
+    this.petService.getAll()
+            .pipe(first())
+            .subscribe(pets => this.pets = pets);
+  }
 
   signOut(): void{
-    localStorage.removeItem('token')
+    localStorage.removeItem('token');
     window.location.replace("/login");
   };
 
@@ -18,13 +27,13 @@ export class PetListComponent {
     this.router.navigate(['pets/create']);
   };
 
-  getDetails(){
-    this.router.navigate(['pets/9']);
+  getDetails(id: string){
+    this.router.navigate([`pets/${id}`]);
   };
 
-  updatePet(){
-    this.router.navigate(['pets/edit/9']);
+  updatePet(id: string){
+    this.router.navigate([`pets/edit/${id}`]);
   };
 
-  deletePet(){}
+  deletePet(id: string){}
 }

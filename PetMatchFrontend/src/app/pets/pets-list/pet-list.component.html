@@ -13,21 +13,21 @@
     </div>
 </button>
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
-    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let num of [1,2,3,4,5,6,7]">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let pet of pets">
       <mat-card class="mat-elevation-z4" >
         <mat-card-header>
-          <mat-card-title>Pet {{num}}</mat-card-title>
+          <mat-card-title>Pet {{pet.name}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image (click)="getDetails()" class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/1/18/Dog_Breeds.jpg">
+        <img mat-card-image (click)="getDetails(pet.id.value)" class="card-img" src="{{pet.url}}">
         <mat-card-content>
           <p>
-            This is pet {{num}}.
+            {{pet.description}}.
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button (click)="getDetails()">DETAILS</button>
-          <button mat-button (click)="updatePet()">EDIT</button>
-          <button mat-button (click)="deletePet()">DELETE</button>
+          <button mat-button (click)="getDetails(pet.id.value)">DETAILS</button>
+          <button mat-button (click)="updatePet(pet.id.value)">EDIT</button>
+          <button mat-button (click)="deletePet(pet.id.value)">DELETE</button>
         </mat-card-actions>
       </mat-card>
     </div>

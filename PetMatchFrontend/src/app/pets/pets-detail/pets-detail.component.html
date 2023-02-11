@@ -5,10 +5,10 @@
             <div class="arrow"></div>
         </div>
     </button>
-    <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/1/18/Dog_Breeds.jpg"/>
+    <img class="card-img" src="{{pet.url}}"/>
     <div class="card-info">
-      <p class="text-title">Product title </p>
-      <p class="text-body">Product description and details</p>
+      <p class="text-title">{{pet.name}} </p>
+      <p class="text-body">{{pet.description}}</p>
     </div>
     <div class="card-footer">
         <button mat-button (click)="goBack()">GO BACK</button>
