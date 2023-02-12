@@ -7,5 +7,6 @@ Content-Type: application/json
     "firstName": "Ornella",
     "lastName": "Stirparo",
     "email": "ostirparo@gmail.com",
-    "password": "Pwd12345."
+    "password": "Pwd12345.",
+    "confirmPassword": "Pwd12345."
 }

@@ -20,7 +20,7 @@ export class PetFormComponent {
     loading = false;
 
     constructor(private route: ActivatedRoute, private router: Router, 
-      private petService: PetService, private formBuilder: FormBuilder,){}
+      private petService: PetService, private formBuilder: FormBuilder){}
 
     ngOnInit() {
       this.id = this.route.snapshot.params['id'];

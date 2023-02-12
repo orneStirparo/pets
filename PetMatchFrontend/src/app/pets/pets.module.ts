@@ -11,7 +11,8 @@ import { MatCardModule} from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { PetsComponent } from './pets.component'
+import { PetsComponent } from './pets.component';
+
 
 @NgModule({
     imports: [

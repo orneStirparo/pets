@@ -6,6 +6,7 @@ using PetMatch.Application.Authentication.Commands.Register;
 using PetMatch.Application.Authentication.Queries.Login;
 using MapsterMapper;
 using Microsoft.AspNetCore.Authorization;
+using FluentValidation;
 
 namespace PetMatch.Api.Controllers;
 
@@ -13,22 +14,33 @@ namespace PetMatch.Api.Controllers;
 [Route("authentication")]
 public class AuthenticationController : ApiController
 {
+    private readonly RegisterCommandValidator _validator;
+
     private readonly ISender _mediator;
     private readonly IMapper _mapper;
 
-    public AuthenticationController(ISender mediator, IMapper mapper)
+    public AuthenticationController(ISender mediator, IMapper mapper, RegisterCommandValidator validator)
     {
+        _validator = validator;
         _mediator = mediator;
         _mapper = mapper;
     }
 
     [Route("register")]
-    public async Task<IActionResult> Register(RegisterRequest request)
+    public async Task<IActionResult> Register(RegisterCommand request)
     {
-    var response = new HttpResponseMessage();
-    response.Headers.Add("Access-Control-Allow-Origin", "*");
-    response.Headers.Add("Access-Control-Allow-Headers", "origin, content-type, accept");
-    response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");        var command = _mapper.Map<RegisterCommand>(request);
+        var result = _validator.Validate(request);
+        if (!result.IsValid)
+        {
+            var errors = result.Errors.Select(x => new
+        {
+            x.PropertyName,
+            x.ErrorMessage
+        });
+        return BadRequest(errors);
+        }
+        var response = new HttpResponseMessage();    
+        var command = _mapper.Map<RegisterCommand>(request);
         var authenticationResult = await _mediator.Send(command);
 
         return authenticationResult.Match(

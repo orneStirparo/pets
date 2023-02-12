@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app.routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -12,6 +13,9 @@ import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './Interceptors/auth.interceptor';
+import { ErrorInterceptor } from './Interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     RegisterComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     CommonModule,
     AppRoutingModule,
@@ -31,7 +36,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     FlexLayoutModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ErrorInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

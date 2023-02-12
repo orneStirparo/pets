@@ -17,7 +17,7 @@ export class RegisterComponent {
   constructor(public userService: UsersService, private router: Router) {}
 
   register() {
-    const user = { firstName: this.firstName, lastName: this.lastName, email: this.email, password: this.password };
+    const user = { firstName: this.firstName, lastName: this.lastName, email: this.email, password: this.password, confirmPassword: this.confirmPassword };
     this.userService.register(user).subscribe(data => {
       localStorage.setItem("token", data.token)
       this.router.navigate(['/pets'])

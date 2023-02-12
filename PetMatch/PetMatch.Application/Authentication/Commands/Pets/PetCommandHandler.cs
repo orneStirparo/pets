@@ -4,9 +4,9 @@ using MediatR;
 using PetMatch.Application.Common.Interfaces.Persistance;
 using PetMatch.Domain.Pets.ValueObjects;
 
-namespace PetMatch.Application.Pets.Commands.CreatePet;
+namespace PetMatch.Application.Commands.Pets;
 
-public class CreatePetCommandHandler : IRequestHandler<CreatePetCommand, ErrorOr<Pet>>
+public class CreatePetCommandHandler : IRequestHandler<PetCommand, ErrorOr<Pet>>
 {
     private readonly IPetRepository _petRepository;
 
@@ -15,7 +15,7 @@ public class CreatePetCommandHandler : IRequestHandler<CreatePetCommand, ErrorOr
         _petRepository = petRepository;
     }
 
-    public async Task<ErrorOr<Pet>> Handle(CreatePetCommand request, CancellationToken cancellationToken)
+    public async Task<ErrorOr<Pet>> Handle(PetCommand request, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
 

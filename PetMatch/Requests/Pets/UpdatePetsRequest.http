@@ -1,12 +1,12 @@
 @host=http://localhost:4000
-@id=5254adc9-39ad-41a9-ae2b-69fa21c9fcee
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJQZXRNYXRjaC5Eb21haW4uVXNlcnMuVmFsdWVPYmplY3RzLlVzZXJJZCIsImdpdmVuX25hbWUiOiJPcm5lbGxhIiwiZmFtaWx5X25hbWUiOiJTdGlycGFybyIsImp0aSI6ImUzOTUyMTFkLTA1MTEtNDc4Zi1iNzg0LWRmNzA5OWFkZjljOCIsImV4cCI6MTY3NjA0ODQ3MSwiaXNzIjoiUGV0TWF0Y2giLCJhdWQiOiJQZXRNYXRjaCJ9.2ekA2cgIjrgyLr99-fH69LbxjUrDlwzCP1aQFc9z19o
+@id=f51d944a-93ec-456d-af7c-6a0cd8a8c813
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJQZXRNYXRjaC5Eb21haW4uVXNlcnMuVmFsdWVPYmplY3RzLlVzZXJJZCIsImdpdmVuX25hbWUiOiJPcm5lbGxhIiwiZmFtaWx5X25hbWUiOiJTdGlycGFybyIsImp0aSI6ImYwOWM4OTE1LWVlZjItNGZhMy1hMzU4LWI0YTQyYzJmZTI1ZiIsImV4cCI6MTY3NjIzNDU4MSwiaXNzIjoiUGV0TWF0Y2giLCJhdWQiOiJQZXRNYXRjaCJ9.2gr-fY9Vf7kQTw2EDSpW1zDdbVjKKgPN22vI5_c8KtU
 PUT {{host}}/pets/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-    "name": "Rufus",
+    "name": "Joe",
     "description": "A very good dog",
     "url": "https://www.aspca.org/sites/default/files/blog_make-dogs-day_101619_main.jpg"
 }

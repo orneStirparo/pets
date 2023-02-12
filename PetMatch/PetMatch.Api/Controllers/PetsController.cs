@@ -1,11 +1,8 @@
-using PetMatch.Application.Pets.Commands.CreatePet;
-using PetMatch.Contracts.Pets;
+using PetMatch.Application.Commands.Pets;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using PetMatch.Application.Common.Interfaces.Persistance;
-using PetMatch.Domain.Pets;
-using PetMatch.Domain.Pets.ValueObjects;
 
 namespace PetMatch.Api.Controllers;
 
@@ -14,11 +11,14 @@ public class PetsController : ApiController
 {
     private readonly IMapper _mapper;
 
+    private readonly PetCommandValidator _validator;
+
     private readonly IPetRepository _petRepository; 
     private readonly ISender _mediator;
 
-    public PetsController(IMapper mapper, ISender mediator, IPetRepository petRepository)
+    public PetsController(IMapper mapper, ISender mediator, IPetRepository petRepository, PetCommandValidator validator)
     {
+        _validator = validator;
         _petRepository = petRepository;
         _mapper = mapper;
         _mediator = mediator;
@@ -26,9 +26,19 @@ public class PetsController : ApiController
 
     [HttpPost]
     public async Task<IActionResult> CreatePet(
-        CreatePetRequest request)
+        PetCommand request)
     {
-        var command = _mapper.Map<CreatePetCommand>((request));
+        var result = _validator.Validate(request);
+        if (!result.IsValid)
+        {
+            var errors = result.Errors.Select(x => new
+        {
+            x.PropertyName,
+            x.ErrorMessage
+        });
+        return BadRequest(errors);
+        }
+        var command = _mapper.Map<PetCommand>((request));
 
         var createPetResult = await _mediator.Send(command);
         return createPetResult.Match(
@@ -51,10 +61,20 @@ public class PetsController : ApiController
     }
 
      [HttpPut("{id}")]
-    public IActionResult Update(Guid id, UpdatePetRequest pet)
+    public IActionResult Update(Guid id, PetCommand request)
     {
+         var result = _validator.Validate(request);
+        if (!result.IsValid)
+        {
+            var errors = result.Errors.Select(x => new
+        {
+            x.PropertyName,
+            x.ErrorMessage
+        });
+        return BadRequest(errors);
+        }
         var previousPet = _petRepository.GetById(id);
-        var mappedPet = _mapper.Map(pet, previousPet);
+        var mappedPet = _mapper.Map(request, previousPet);
         _petRepository.Update(mappedPet);
         return Ok(new { message = "Pet updated" });
     }
