@@ -32,12 +32,8 @@ public class AuthenticationController : ApiController
         var result = _validator.Validate(request);
         if (!result.IsValid)
         {
-            var errors = result.Errors.Select(x => new
-        {
-            x.PropertyName,
-            x.ErrorMessage
-        });
-        return BadRequest(errors);
+             var errors = result.Errors.Select(x => x.ErrorMessage).ToArray();
+             return BadRequest(errors);
         }
         var response = new HttpResponseMessage();    
         var command = _mapper.Map<RegisterCommand>(request);
