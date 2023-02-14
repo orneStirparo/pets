@@ -7,6 +7,7 @@ using PetMatch.Application.Authentication.Queries.Login;
 using MapsterMapper;
 using Microsoft.AspNetCore.Authorization;
 using FluentValidation;
+using PetMatch.Application.Authentication.Commands.Login;
 
 namespace PetMatch.Api.Controllers;
 
@@ -15,12 +16,13 @@ namespace PetMatch.Api.Controllers;
 public class AuthenticationController : ApiController
 {
     private readonly RegisterCommandValidator _validator;
-
+    private readonly LoginCommandValidator _loginValidator;
     private readonly ISender _mediator;
     private readonly IMapper _mapper;
 
-    public AuthenticationController(ISender mediator, IMapper mapper, RegisterCommandValidator validator)
+    public AuthenticationController(ISender mediator, IMapper mapper, RegisterCommandValidator validator, LoginCommandValidator loginValidator)
     {
+        _loginValidator = loginValidator;
         _validator = validator;
         _mediator = mediator;
         _mapper = mapper;
@@ -32,10 +34,10 @@ public class AuthenticationController : ApiController
         var result = _validator.Validate(request);
         if (!result.IsValid)
         {
-             var errors = result.Errors.Select(x => x.ErrorMessage).ToArray();
-             return BadRequest(errors);
+            var errors = result.Errors.Select(x => x.ErrorMessage).ToArray();
+            return BadRequest(errors);
         }
-        var response = new HttpResponseMessage();    
+        var response = new HttpResponseMessage();
         var command = _mapper.Map<RegisterCommand>(request);
         var authenticationResult = await _mediator.Send(command);
 
@@ -45,12 +47,18 @@ public class AuthenticationController : ApiController
     }
 
     [Route("login")]
-    public async Task<IActionResult> Login(LoginRequest request)
+    public async Task<IActionResult> Login(LoginCommand request)
     {
+        var result = _loginValidator.Validate(request);
+        if (!result.IsValid)
+        {
+            var errors = result.Errors.Select(x => x.ErrorMessage).ToArray();
+            return BadRequest(errors);
+        }
         var query = _mapper.Map<LoginQuery>(request);
         var authenticationResult = await _mediator.Send(query);
 
-        if(authenticationResult.IsError && authenticationResult.FirstError == Errors.Authentication.InvalidCredentials)
+        if (authenticationResult.IsError && authenticationResult.FirstError == Errors.Authentication.InvalidCredentials)
         {
             return Problem(
                 statusCode: StatusCodes.Status401Unauthorized,

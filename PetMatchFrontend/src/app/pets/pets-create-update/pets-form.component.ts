@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { first } from "rxjs";
+import { catchError, first, throwError } from "rxjs";
 import { PetService } from "src/app/services";
 
 @Component({
@@ -18,6 +18,7 @@ export class PetFormComponent {
     description!: string;
     url!: string;
     loading = false;
+    errorMessage!: any
 
     constructor(private route: ActivatedRoute, private router: Router, 
       private petService: PetService, private formBuilder: FormBuilder){}
@@ -53,9 +54,13 @@ export class PetFormComponent {
 
     private createPet() {
       this.petService.create(this.form.value)
-          .pipe(first())
-          .subscribe(() => {
-              //this.alertService.success('User added', { keepAfterRouteChange: true });
+      .pipe(first(),
+        catchError(error => {
+          this.errorMessage = error.error;
+          console.log(this.errorMessage)
+          return throwError(error);
+        })
+      ).subscribe(() => {
               this.router.navigate(['pets']);
           })
           .add(() => this.loading = false);
@@ -63,9 +68,13 @@ export class PetFormComponent {
 
   private updatePet() {
       this.petService.update(this.id, this.form.value)
-          .pipe(first())
-          .subscribe(() => {
-              //this.alertService.success('User updated', { keepAfterRouteChange: true });
+      .pipe(first(),
+      catchError(error => {
+        this.errorMessage = error.error;
+        console.log(this.errorMessage)
+        return throwError(error);
+      })
+    ).subscribe(() => {
               this.router.navigate(['pets']);
           })
           .add(() => this.loading = false);

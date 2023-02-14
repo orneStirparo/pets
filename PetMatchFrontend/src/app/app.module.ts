@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './Interceptors/auth.interceptor';
+import { ErrorInterceptor } from './Interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,11 @@ import { AuthInterceptor } from './Interceptors/auth.interceptor';
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
+    multi: true
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ErrorInterceptor,
     multi: true
   }],
   bootstrap: [AppComponent]

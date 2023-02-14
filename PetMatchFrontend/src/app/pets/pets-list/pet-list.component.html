@@ -1,17 +1,20 @@
-<div class="content" class="custom-background">
-  <button class="custom" (click)="createPet()">
-    <span>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24
-  v24H0z"></path>
-  <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> Create a Pet!
-    </span>
-  </button>
+
+<div class="header">
   <button class="button-style" (click)="signOut()">
     Sign out
     <div class="arrow-wrapper">
         <div class="arrow"></div>
     </div>
 </button>
+<button class="custom" (click)="createPet()">
+  <span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24
+v24H0z"></path>
+<path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> Create a Pet!
+  </span>
+</button>
+</div>
+<div class="content" class="custom-background" class="body">
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
     <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let pet of pets">
       <mat-card class="mat-elevation-z4" >

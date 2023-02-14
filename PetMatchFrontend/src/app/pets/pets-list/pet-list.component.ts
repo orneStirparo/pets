@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { first } from 'rxjs';
-import { Pet } from 'src/app/models';
 import { PetService } from 'src/app/services';
 import Swal from 'sweetalert2';
 

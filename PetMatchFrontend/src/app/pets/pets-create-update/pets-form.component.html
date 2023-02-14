@@ -1,8 +1,11 @@
 <div class="form">
-    <form [formGroup]="form" class="custom-form" method="post">
+    <form [formGroup]="form" class="custom-form" method="post"
+    [ngStyle]="{'height': errorMessage?.length > 0 ? '450px':'' }"
+    >
       <h1 *ngIf="isAddMode" class="text-title">Create Pet</h1>
       <h1 *ngIf="!isAddMode" class="text-title">Edit Pet</h1>
       <input
+      [ngStyle]="{'border': form.get('name')?.invalid && form.get('name')?.touched ? '2px solid red':'' }"
         type="name"
         name="name"
         formControlName="name"
@@ -11,6 +14,7 @@
         required="required"
       />
       <input
+      [ngStyle]="{'border': form.get('description')?.invalid && form.get('description')?.touched ? '2px solid red':'' }"
         type="description"
         name="description"
         formControlName="description"
@@ -18,8 +22,8 @@
         placeholder="Description"
         required="required"
       />
-      
       <input
+      [ngStyle]="{'border': form.get('url')?.invalid && form.get('url')?.touched ? '2px solid red':'' }"
         type="url"
         name="url"
         formControlName="url"
@@ -27,8 +31,13 @@
         placeholder="Insert the URL of the image"
         required="required"
       />
+      <div style="color: red;" role="alert" *ngIf="errorMessage?.length > 0">
+        <p>
+          *{{ errorMessage }}
+        </p>
+    </div>  
       <div class="card-footer">
-        <button type="submit" class="confirm" (click)="onSubmit()">Submit</button>
+        <button type="submit" class="confirm" (click)="onSubmit()" [style.background-color]="form.invalid ? 'lightgrey' : ' #bcd8c1'"  [style.cursor]="form.invalid ? 'not-allowed' : 'pointer'" [disabled]="form.invalid">Submit</button>
       <button type="submit" class="cancel" (click)="goBack()">Cancel</button>
       </div>
     </form>

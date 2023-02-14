@@ -36,7 +36,6 @@ export class RegisterComponent {
     .pipe(
       catchError(error => {
         this.errorMessage = error.error;
-        console.log(this.errorMessage)
         return throwError(error);
       })
     ).subscribe(

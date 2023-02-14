@@ -13,7 +13,7 @@ public class PetsController : ApiController
 
     private readonly PetCommandValidator _validator;
 
-    private readonly IPetRepository _petRepository; 
+    private readonly IPetRepository _petRepository;
     private readonly ISender _mediator;
 
     public PetsController(IMapper mapper, ISender mediator, IPetRepository petRepository, PetCommandValidator validator)
@@ -31,12 +31,8 @@ public class PetsController : ApiController
         var result = _validator.Validate(request);
         if (!result.IsValid)
         {
-            var errors = result.Errors.Select(x => new
-        {
-            x.PropertyName,
-            x.ErrorMessage
-        });
-        return BadRequest(errors);
+            var errors = result.Errors.Select(x => x.ErrorMessage).ToArray();
+            return BadRequest(errors);
         }
         var command = _mapper.Map<PetCommand>((request));
 
@@ -45,7 +41,7 @@ public class PetsController : ApiController
             pet => Ok(_mapper.Map<PetResponse>(pet)),
             errors => Problem(errors));
     }
-    
+
     [HttpGet]
     public IActionResult GetAll()
     {
@@ -60,18 +56,18 @@ public class PetsController : ApiController
         return Ok(user);
     }
 
-     [HttpPut("{id}")]
+    [HttpPut("{id}")]
     public IActionResult Update(Guid id, PetCommand request)
     {
-         var result = _validator.Validate(request);
+        var result = _validator.Validate(request);
         if (!result.IsValid)
         {
             var errors = result.Errors.Select(x => new
-        {
-            x.PropertyName,
-            x.ErrorMessage
-        });
-        return BadRequest(errors);
+            {
+                x.PropertyName,
+                x.ErrorMessage
+            });
+            return BadRequest(errors);
         }
         var previousPet = _petRepository.GetById(id);
         var mappedPet = _mapper.Map(request, previousPet);
@@ -85,4 +81,4 @@ public class PetsController : ApiController
         _petRepository.Delete(id);
         return Ok(new { message = "Pet deleted" });
     }
-    }
+}
