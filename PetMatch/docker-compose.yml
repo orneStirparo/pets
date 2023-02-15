@@ -8,12 +8,18 @@ services:
       - "4200:80"
     links:
       - web
+    environment:
+      - ../PetMatchFrontend/src/environment/environment.ts   
   web:
     build:
       context: .
       dockerfile: Dockerfile
     image: petmatch
     ports:
-      - "4000:8081"
+      - "4000:4000"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - network1
+networks:
+  network1:

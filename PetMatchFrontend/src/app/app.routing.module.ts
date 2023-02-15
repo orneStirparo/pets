@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'register', component: RegisterComponent, pathMatch: 'full' },
   { path: 'pets', loadChildren: petsComponent, canActivate: [AuthGuard] },
-   { path: '**', component: RegisterComponent, pathMatch: 'full' },
+   { path: '**', component: RegisterComponent },
 ];
 
 @NgModule({

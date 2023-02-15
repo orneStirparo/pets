@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using PetMatch.Api;
 using PetMatch.Api.Common;
 using PetMatch.Application;
@@ -18,6 +19,7 @@ var app = builder.Build();
         .AllowAnyOrigin()
         .AllowAnyMethod()
         .AllowAnyHeader());
+
 
     // global error handler
     app.UseMiddleware<ErrorHandlerMiddleware>();
