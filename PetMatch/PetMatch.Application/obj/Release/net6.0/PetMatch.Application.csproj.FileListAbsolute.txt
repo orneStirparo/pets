@@ -1,0 +1,15 @@
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\PetMatch.Application.deps.json
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\PetMatch.Application.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\PetMatch.Application.pdb
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\PetMatch.Domain.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\PetMatch.Domain.pdb
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\obj\Release\net6.0\PetMatch.Application.csproj.AssemblyReference.cache
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\obj\Release\net6.0\PetMatch.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\obj\Release\net6.0\PetMatch.Application.AssemblyInfoInputs.cache
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\obj\Release\net6.0\PetMatch.Application.AssemblyInfo.cs
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\obj\Release\net6.0\PetMatch.Application.csproj.CoreCompileInputs.cache
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\obj\Release\net6.0\PetMatch.Application.csproj.CopyComplete
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\obj\Release\net6.0\PetMatch.Application.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\obj\Release\net6.0\refint\PetMatch.Application.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\obj\Release\net6.0\PetMatch.Application.pdb
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\obj\Release\net6.0\ref\PetMatch.Application.dll

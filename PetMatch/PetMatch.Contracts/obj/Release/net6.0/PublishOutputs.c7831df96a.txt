@@ -1,0 +1,3 @@
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\bin\Release\net6.0\publish\PetMatch.Contracts.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\bin\Release\net6.0\publish\PetMatch.Contracts.deps.json
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\bin\Release\net6.0\publish\PetMatch.Contracts.pdb

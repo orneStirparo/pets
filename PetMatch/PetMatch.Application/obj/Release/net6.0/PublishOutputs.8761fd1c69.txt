@@ -1,0 +1,14 @@
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\PetMatch.Application.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\PetMatch.Application.deps.json
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\PetMatch.Application.pdb
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\ErrorOr.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\FluentValidation.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\FluentValidation.AspNetCore.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\MediatR.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\MediatR.Contracts.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\PetMatch.Domain.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Application\bin\Release\net6.0\publish\PetMatch.Domain.pdb

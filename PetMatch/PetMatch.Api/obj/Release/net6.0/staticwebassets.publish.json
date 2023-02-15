@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Q3MN0AHZCJgMDnZT9tOULc6R7kzZH6GbMI9TV0tIpo4=",
+  "Source": "PetMatch.Api",
+  "BasePath": "_content/PetMatch.Api",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

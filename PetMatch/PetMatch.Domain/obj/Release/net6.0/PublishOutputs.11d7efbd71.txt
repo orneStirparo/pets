@@ -1,0 +1,4 @@
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Domain\bin\Release\net6.0\publish\PetMatch.Domain.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Domain\bin\Release\net6.0\publish\PetMatch.Domain.deps.json
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Domain\bin\Release\net6.0\publish\PetMatch.Domain.pdb
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Domain\bin\Release\net6.0\publish\ErrorOr.dll

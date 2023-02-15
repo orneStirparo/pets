@@ -202,3 +202,8 @@ C:\Users\ornel\pet-match\PetMatch\PetMatch.Api\obj\Debug\net6.0\refint\PetMatch.
 C:\Users\ornel\pet-match\PetMatch\PetMatch.Api\obj\Debug\net6.0\PetMatch.Api.pdb
 C:\Users\ornel\pet-match\PetMatch\PetMatch.Api\obj\Debug\net6.0\PetMatch.Api.genruntimeconfig.cache
 C:\Users\ornel\pet-match\PetMatch\PetMatch.Api\obj\Debug\net6.0\ref\PetMatch.Api.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Api\obj\Debug\net6.0\staticwebassets\msbuild.PetMatch.Api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Api\obj\Debug\net6.0\staticwebassets\msbuild.build.PetMatch.Api.props
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.PetMatch.Api.props
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.PetMatch.Api.props
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Api\obj\Debug\net6.0\staticwebassets.pack.json

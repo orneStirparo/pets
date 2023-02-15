@@ -1,0 +1,12 @@
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\bin\Release\net6.0\PetMatch.Contracts.deps.json
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\bin\Release\net6.0\PetMatch.Contracts.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\bin\Release\net6.0\PetMatch.Contracts.pdb
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\obj\Release\net6.0\PetMatch.Contracts.csproj.AssemblyReference.cache
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\obj\Release\net6.0\PetMatch.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\obj\Release\net6.0\PetMatch.Contracts.AssemblyInfoInputs.cache
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\obj\Release\net6.0\PetMatch.Contracts.AssemblyInfo.cs
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\obj\Release\net6.0\PetMatch.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\obj\Release\net6.0\PetMatch.Contracts.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\obj\Release\net6.0\refint\PetMatch.Contracts.dll
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\obj\Release\net6.0\PetMatch.Contracts.pdb
+C:\Users\ornel\pet-match\PetMatch\PetMatch.Contracts\obj\Release\net6.0\ref\PetMatch.Contracts.dll

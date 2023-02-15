@@ -21,7 +21,7 @@ export class PetsDetailComponent {
   }
   signOut(): void{
     localStorage.removeItem('token')
-    window.location.replace("/login");
+    this.router.navigate([`/login`]);
   };
   goBack(): void{
     this.router.navigate(['/pets']);

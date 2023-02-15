@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "VDAys4SFYky1BVgrsZUPMXLwhqn25ly0JmdNtsq7E00=",
+  "Source": "PetMatch.Api",
+  "BasePath": "_content/PetMatch.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

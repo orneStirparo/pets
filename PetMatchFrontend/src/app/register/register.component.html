@@ -43,7 +43,10 @@
         <div *ngIf="form.get('email')?.errors?.['email']">
           *Email is invalid.
         </div>
-      </div>          
+      </div>  
+      <div style="color: red;" role="alert" *ngIf="usedEmail">
+        *{{ usedEmail }}
+    </div>          
       <input
         type="password"
         formControlName="password"

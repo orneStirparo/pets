@@ -18,6 +18,7 @@ export class RegisterComponent {
   validationErrors!: any;
   form!: FormGroup<{firstName: FormControl<string | null>; lastName: FormControl<string | null>; email: FormControl<string | null>; password: FormControl<string | null>; confirmPassword: FormControl<string | null>; }>;
   errorMessage: any;
+  usedEmail: any;
 
   constructor(public userService: UsersService, private router: Router, 
     private fb: FormBuilder) {}
@@ -32,10 +33,17 @@ export class RegisterComponent {
       });
     }
   register() {
+    this.errorMessage = '';
+    this.usedEmail = '';
     this.userService.register(this.form.value)
     .pipe(
       catchError(error => {
+        if(error.error.status == 409){
+          this.usedEmail = error.error.title;
+          console.log(this.usedEmail)
+        }else{
         this.errorMessage = error.error;
+        }
         return throwError(error);
       })
     ).subscribe(

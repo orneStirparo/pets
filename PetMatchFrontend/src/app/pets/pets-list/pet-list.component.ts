@@ -19,8 +19,8 @@ export class PetListComponent {
   }
 
   signOut(): void{
+    this.router.navigate([`/login`]);
     localStorage.removeItem('token');
-    window.location.replace("/login");
   };
 
   createPet(){
